@@ -1,0 +1,56 @@
+/* Navigation bar */
+nav {
+    background-color: #007BFF;
+    padding: 5px;
+    position: sticky;
+    top: 0;
+}
+nav:hover{
+    background-color: black;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: right; /* Align the items to the right */
+    
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px; /* Change margin-left to push items to the right */
+    padding: 20px;
+}
+
+nav ul li:first-child {
+    margin-left: 0; /* Remove margin for the first item */
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s; /* Add text-decoration transition */
+}
+
+nav a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px; /* Adjust underline thickness */
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease-in-out; /* Add width transition */
+}
+
+nav a:hover {
+    color: #007BFF;
+}
+
+nav a:hover::after {
+    width: 100%; /* Expand the underline on hover */
+    color: blue;
+}

@@ -1,0 +1,103 @@
+/* Reset some default margin and padding for the page */
+body, h2, form {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set a background color for the entire page */
+body {
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+/* Style the container */
+.container {
+    background-color: #ffffff;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: relative; /* Add relative positioning to the container */
+}
+
+/* Style the page title */
+h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Style the form */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Style each row */
+.row {
+    width: 100%; /* Each row takes up 100% of the container width */
+    margin-bottom: 20px; /* Add spacing between rows */
+    display: flex;
+    flex-direction: row; /* Display input fields in a row */
+    justify-content: space-between;
+}
+
+/* Style the input fields */
+.row-item {
+    width: 48%; /* Each input field takes up 48% of the row width */
+    margin-bottom: 10px; /* Add spacing between input fields */
+}
+
+input {
+    width: 90%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+input:focus {
+    border-color: #007bff; /* Highlight input fields on focus */
+}
+
+/* Style the "Add Student" button */
+.add-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+    position: absolute; /* Add absolute positioning to the button */
+    bottom: 20px; /* Position it at the bottom with 20px margin */
+    right: 30px; /* Position it at the right with 20px margin */
+}
+
+.add-button:hover {
+    background-color: #0056b3;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #333;
+    font-size: 16px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .row {
+        width: 100%;
+    }
+}

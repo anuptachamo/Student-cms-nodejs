@@ -1,0 +1,33 @@
+/* Reset some default styles */
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+/* Body and global styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* Main Content */
+main {
+    max-width: 100%;
+    margin: 20px 10px 20px 10px; /*tr bl*/
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.mainContent{
+    text-align: justify;
+}
+
+
+
