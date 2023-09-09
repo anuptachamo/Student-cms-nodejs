@@ -14,11 +14,15 @@ body {
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    margin-top: 20px;
+    margin-top: 30px;
+    transition: transform 0.2s ease-in-out;
+
 }
 
 .page-content:hover{
     background-color: rgb(56, 54, 54);
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 pre {
@@ -40,31 +44,6 @@ dd {
 }
 
 
-
-/* .delete-button{
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #ff3333;
-    color: #fff;
-    text-decoration: none;
-    border: 1px solid #fff; 
-    border-radius: 5px;
-    margin-top: 20px;
-    margin-left: 500px;
-    font-weight: bold;
-}
-.update-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #ff3333;
-    color: #fff;
-    text-decoration: none;
-    border: 1px solid #fff; 
-    margin-top: 20px;
-    margin-left: 400px;
-    font-weight: bold;
-} */
-
 .delete-button,
 .update-button {
     display: inline-block;
@@ -72,7 +51,7 @@ dd {
     background-color: #ff3333;
     color: #fff;
     text-decoration: none;
-    border: 1px solid #ffffff; /* Add white border */
+    border: 2px solid #ffffff; /* Add white border */
     border-radius: 5px;
     margin: 5px;
     margin-top: 20px;
@@ -86,14 +65,13 @@ dd {
 }
 
 .update-button:hover{
-    /* background-color: #35925e; */
     background-color: #fff;
     color: #1f971f;
-    border: 1px solid #1f971f;
+    border: 2px solid #1f971f;
 
 }
 .delete-button:hover {
     color: #e55a5a;
     background-color: #fff;
-    border: 1px solid #e55a5a;
+    border: 2px solid #e55a5a;
 }

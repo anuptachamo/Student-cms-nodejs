@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="page-content">
-        <div>
+        <div class="main-content">
             <pre>Fullname                        :</pre>
             <dd> <%- allsDetails[0].fullname %> </dd>
 
@@ -32,7 +32,7 @@
             <pre>Contact                          :</pre>
             <dd> <%- allsDetails[0].contactno %></dd>
             <div class="button-container">
-                <a href="/edit/<%- allsDetails[0].id %>" class="update-button">Update</a>
+                <a href="/update/<%- allsDetails[0].id %>" class="update-button">Update</a>
                 <a href="/delete/<%-allsDetails[0].id %>" class="delete-button">Delete</a>
             </div>
         </div>

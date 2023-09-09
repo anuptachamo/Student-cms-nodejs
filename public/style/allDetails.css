@@ -141,15 +141,17 @@ a:hover {
 /* allDetails.css */
 .btn {
     display: inline-block;
-    background-color: rgb(56, 54, 54);
+    background-color:#007BFF;
     color: #fff;
     padding: 10px 20px;
     margin-top: 0; 
     margin-left: 630px; 
-    border: 1px solid #fff; /* Add white border */
+    border: 2px solid #fff; /* Add white border */
     border-radius: 4px;
     text-decoration: none;
     font-weight: bold;
+    text-transform: uppercase;
+    font-size: 15px;
     transition: background-color 0.2s ease-in-out;
 }
 

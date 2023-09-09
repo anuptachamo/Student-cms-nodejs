@@ -1,5 +1,5 @@
 /* Navigation bar */
-nav {
+/* nav {
     background-color: #3498d6;
     padding: 5px;
     position: sticky;
@@ -9,29 +9,50 @@ nav:hover{
     background-color: rgb(56, 54, 54);
 }
 
+.nav-logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  } */
+
+  /* .nav-logo:hover{ */
+    /* color: rgb(22, 103, 214);Change the color on hover */
+  /* transform: scale(1.05); Slightly scale the logo on hover */
+  /* } */
+
+  /* .nav-logo img {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+
 nav ul {
     list-style: none;
-    padding: 0;
-    text-align: right; /* Align the items to the right */
+    padding: 0; */
+    /* text-align: right; Align the items to the right */
     
-}
+/* } */
 
-nav ul li {
-    display: inline;
-    margin-left: 20px; /* Change margin-left to push items to the right */
-    padding: 20px;
-}
+/* nav ul li {
+    display: inline; */
+    /* margin-left: 20px; Change margin-left to push items to the right */
+    /* padding: 20px;
+} */
 
-nav ul li:first-child {
-    margin-left: 0; /* Remove margin for the first item */
-}
+/* nav ul li:first-child { */
+    /* margin-left: 0; Remove margin for the first item */
+/* }
 
 nav a {
     text-decoration: none;
     color: #fff;
     font-weight: bold;
     font-size: 16px;
-    /* transition: color 0.3s;  */
+    transition: color 0.3s; 
 }
 
 
@@ -56,3 +77,111 @@ nav a:hover::after {
     color: #007BFF;
     ;
 }
+
+
+img { */
+    /* max-height: 50px; Set the maximum height of the logo */
+    /* margin-left: 20px; Add spacing to the left of the logo */
+    /* border-radius: 50%; */
+/* } */
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+.navbar {
+    background-color: #1877f2;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+    z-index: 1;
+    position: sticky;
+    top: 0px;
+  }
+
+  .navbar:hover {
+    background-color: #151617;
+  }
+
+  .navbar-logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-logo:hover{
+    color: rgb(22, 103, 214);/* Change the color on hover */
+  transform: scale(1.05); /* Slightly scale the logo on hover */
+  }
+
+  .navbar-logo img {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+
+  .navbar-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    position: relative;
+  }
+
+  .nav-link::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    margin: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    transform: translate(-50%, 20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    z-index: 1;
+  }
+  
+  .nav-link:hover::before {
+    display: block;
+    opacity: 1;
+    transform: translate(-50%, 30px);
+    pointer-events: auto;
+  }
+
+  .navbar-links li {
+    margin-right: 20px;
+  }
+
+  .navbar-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .navbar-links a:hover {
+    color: white;
+    background-color: rgb(22, 103, 214);
+  border-radius: 5px;
+  padding: 8px 12px;
+  }
+
+

@@ -77,7 +77,7 @@ input:focus {
 
 /* Style the "Add Student" button */
 .add-button {
-    background-color: #007bff;
+    background-color: #1f971f;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -92,10 +92,13 @@ input:focus {
     text-transform: uppercase;
     font-weight: bold;
 
+
 }
 
 .add-button:hover {
-    background-color: #0056b3;
+    background-color: #fff;
+    color: #1f971f;
+    border: 2px solid #1f971f;
 }
 
 label {
