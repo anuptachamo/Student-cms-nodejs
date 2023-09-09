@@ -1,0 +1,99 @@
+/* sDetails.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.page-content {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #3498d6;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.page-content:hover{
+    background-color: rgb(56, 54, 54);
+}
+
+pre {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 10px;
+    display: inline-block; /* Display DT elements inline */
+    width: 30%; /* Set a width to control spacing between DT and DD */
+}
+
+dd {
+    color: #ffffff;
+    margin: 0;
+    margin-left: 10px; /* Add a left margin for spacing */
+    margin-top: 10px; /* Separate DT and DD elements vertically */
+    display: inline-block; /* Display DD elements inline */
+    width: 65%; /* Adjust width for alignment */
+}
+
+
+
+/* .delete-button{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff3333;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #fff; 
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: 500px;
+    font-weight: bold;
+}
+.update-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff3333;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #fff; 
+    margin-top: 20px;
+    margin-left: 400px;
+    font-weight: bold;
+} */
+
+.delete-button,
+.update-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff3333;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #ffffff; /* Add white border */
+    border-radius: 5px;
+    margin: 5px;
+    margin-top: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.update-button {
+    margin-left: 350px; /* Adjust the margin to your preference */
+    background-color: #1f971f;
+}
+
+.update-button:hover{
+    /* background-color: #35925e; */
+    background-color: #fff;
+    color: #1f971f;
+    border: 1px solid #1f971f;
+
+}
+.delete-button:hover {
+    color: #e55a5a;
+    background-color: #fff;
+    border: 1px solid #e55a5a;
+}
