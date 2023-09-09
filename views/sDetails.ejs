@@ -1,0 +1,27 @@
+
+<%- include ('navbar.ejs') %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Student Details</title>
+    <link rel="stylesheet" href="style/navbar.css">
+
+</head>
+<body>
+    <div class="page-content">
+        <div>
+          <h1> <%- allsDetails[0].fullname %> </h1>
+          <h2><%- allsDetails[0].address %> </h2>
+          <p> <%- allsDetails[0].grade %></p>
+          <p> <%- allsDetails[0].rollno %></p>
+          <p> <%- allsDetails[0].age %></p>
+          <p> <%- allsDetails[0].contactno %></p>
+          <a href="/delete/<%-allsDetails[0].id %>">Delete Me</a>
+          <a href="/edit/<%- allsDetails[0].id %>">Edit Me</a>
+        </div>
+      </div>
+</body>
+</html>

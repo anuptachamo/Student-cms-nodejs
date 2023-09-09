@@ -1,0 +1,42 @@
+<%- include("navbar.ejs")%>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/navbar.css">
+    <link rel="stylesheet" href="style/allDetails.css">
+    <title>All Students Details</title>
+</head>
+<body>
+    <div class="container">
+        <% students_details.forEach((allStudentsDetails)=>{ %>
+            <div class="student-card">
+                <dl>
+                    <!-- Description Term -->
+                    <pre>Fullname                                :</pre>
+                      <!-- Description Details -->
+                    <dd><%- allStudentsDetails.fullname %></dd>
+
+                    <pre>Address                                 :</pre>
+                    <dd><%- allStudentsDetails.address %></dd>
+
+                    <pre>Grade                                     :</pre>
+                    <dd><%- allStudentsDetails.grade %></dd>
+
+                    <pre>Roll number                          :</pre>
+                    <dd><%- allStudentsDetails.rollno %></dd>
+
+                    <pre>Age                                        :</pre>
+                    <dd><%- allStudentsDetails.age %></dd>
+
+                    <pre>Contact                                 :</pre>
+                    <dd><%- allStudentsDetails.contactno %></dd>
+                </dl>
+                <a class="btn" href="/single/<%- allStudentsDetails.id %>">See More</a>
+            </div>
+        <% }) %>
+    </div>
+</body>
+</html>
