@@ -1,0 +1,78 @@
+/* Login Page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    max-width: 90%;
+  }
+
+  .container h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #1877f2;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.3s;
+  }
+
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+    border-color: #1877f2;
+  }
+
+  button {
+    background-color: #1c457c;
+    color: white;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: #166fe5;
+  }
+
+  .signup-link {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .signup-link a {
+    color: #1877f2;
+    text-decoration: none;
+  }
+  /* Login page end */

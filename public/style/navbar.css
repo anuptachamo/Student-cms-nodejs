@@ -124,7 +124,8 @@ body {
 
   .navbar-logo:hover{
     color: rgb(22, 103, 214);/* Change the color on hover */
-  transform: scale(1.05); /* Slightly scale the logo on hover */
+    transform: scale(1.05); /* Slightly scale the logo on hover */
+    
   }
 
   .navbar-logo img {

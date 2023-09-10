@@ -1,7 +1,9 @@
 const express = require ('express'); //require a express
 const app = express(); //calling a express
 
-const { students_details } = require("./model/index");    //blogs index.js file bata define vayera ako ho (index.js ko line no. 30)
+const bcrypt = require("bcryptjs");
+
+const { students_details, users } = require("./model/index");    //blogs index.js file bata define vayera ako ho (index.js ko line no. 30)
 require("./model/index");
 
 //setting up ejs, telling nodejs to use ejs
@@ -17,9 +19,11 @@ app.use(express.urlencoded({extended: true}));
 
 // Define route
 app.get('/', async (req, res) => {
-    res.render('home');
-    // const allsDetails = await students_details.findAll();
-    // res.render("home", { students_details: allsDetails });
+    res.render('register');
+});
+
+app.get('/home', async (req, res) => {
+  res.render('home');
 });
 
 //addStudentsDetails.ejs file lai define gareko
@@ -130,7 +134,74 @@ app.post("/updateStudent/:id", async (req, res) => {
 /*updateStudentsDetails end*/
 
 
+
+
+//setting register page
+app.post('/createUser', async(req, res ) =>{
+  console.log(req.body);
+
+  //database ma halnu paryo
+  await users.create({
+      username : req.body.username,
+      email : req.body.email,
+      password : bcrypt.hashSync(req.body.password,10),
+  })
+
+  // res.send("Successful")
+  res.redirect('/login')
+})
+
+
+//login.ejs start
+app.get('/login',(req, res) =>{
+  res.render('login');
+});
+
+// LOGIN user post API
+app.post("/createLogin", async (req, res) => {
+  // email , password
+  const email = req.body.email;
+  const password = req.body.password;
+
+  //aako email registered xa ki xainw check garnu paryo
+  const userFound = await users.findAll({
+    where: {
+      email: email,
+    },
+  });
+
+  // if registered xainw vaney(no)
+  if (userFound.length == 0) {
+    // error faldinu paryo invalid email or email not registered error
+    res.send("Invalid email or password");
+  } else {
+    const databasePassword = userFound[0].password; // database pahila register garda ko password
+    //if registered xa vaney (yes)
+
+    // if yes(xa) vaney ,password check garnu paryo
+    const isPasswordCorrect = bcrypt.compareSync(password, databasePassword);
+
+    if (isPasswordCorrect) {
+      // match vayo(yes),login sucessfully
+      res.render("home");
+    } else {
+      // match vayena (no) , error->invalid password
+      res.send("Invalid email or password");
+    }
+  }
+});
+
+//login.ejs end
+
+
+app.get('/logout', (req, res) => {
+  // Perform any logout actions, such as clearing session data or tokens
+
+  // Redirect the user to the login page after logging out
+  res.redirect('/');
+});
+
 //Start the server
-app.listen(4000, () =>{
+app.listen(3000, () =>{
     console.log('Server is running on port number 4000');
 });

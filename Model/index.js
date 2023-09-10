@@ -30,6 +30,7 @@ db.sequelize = sequelize;
 
 // importing model files 
 db.students_details = require("./studentModel.js")(sequelize, DataTypes);
+db.users = require("./userModel.js")(sequelize, DataTypes);
 
 
 db.sequelize.sync({ force: false }).then(() => {
