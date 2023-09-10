@@ -4,25 +4,30 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login Page</title>
+        <!-- Include CSS stylesheets for styling -->
         <link rel="stylesheet" href="/style/login.css">
     </head>
 <body>
     <div class="container">
         <h2>LOGIN</h2>
-        <form action="/createLogin" method="post">
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit">Log In</button>
-        </form>
-        <div class="signup-link">
-            Don't have an account? <a href="/">Sign Up</a>
-        </div>
+            <!-- Create a form for user login with a POST request to "/createLogin" endpoint -->
+            <form action="/createLogin" method="post">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <!-- Create a "Log In" button to submit the form -->
+                <button type="submit">Log In</button>
+            </form>
+                <div class="signup-link">
+                    Don't have an account? <a href="/">Sign Up</a>
+                </div>
     </div>
 </body>
 </html>

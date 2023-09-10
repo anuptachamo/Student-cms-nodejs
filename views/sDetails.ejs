@@ -1,12 +1,13 @@
-
+<!-- Include the navigation bar component from "navbar.ejs" -->
 <%- include ('navbar.ejs') %>
-
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Include CSS stylesheets for styling -->
     <link rel="stylesheet" href="/style/navbar.css">
     <link rel="stylesheet" href="/style/sDetails.css">
     <title>Single Student Details</title>
@@ -15,24 +16,33 @@
     <div class="page-content">
         <div class="main-content">
             <pre>Fullname                        :</pre>
+            <!-- Display the student's full name -->
             <dd> <%- allsDetails[0].fullname %> </dd>
 
             <pre>Address                         :</pre>
+            <!-- Display the student's address -->
             <dd><%- allsDetails[0].address %> </dd>
 
             <pre>Grade                             :</pre>
+            <!-- Display the student's grade -->
             <dd> <%- allsDetails[0].grade %></dd>
 
             <pre>Roll number                   :</pre>
+            <!-- Display the student's rollno -->
             <dd> <%- allsDetails[0].rollno %></dd>
 
             <pre>Age                                 :</pre>
+            <!-- Display the student's age -->
             <dd> <%- allsDetails[0].age %></dd>
 
             <pre>Contact                          :</pre>
+            <!-- Display the student's contactno -->
             <dd> <%- allsDetails[0].contactno %></dd>
             <div class="button-container">
+                <!-- Create an "Update" button with a link to update the student's details -->
                 <a href="/update/<%- allsDetails[0].id %>" class="update-button">Update</a>
+
+                <!-- Create a "Delete" button with a link to delete the student's details -->
                 <a href="/delete/<%-allsDetails[0].id %>" class="delete-button">Delete</a>
             </div>
         </div>

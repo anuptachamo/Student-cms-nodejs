@@ -1,78 +1,3 @@
-/* navbar.css
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.student-card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    margin: 20px 0;
-    transition: transform 0.2s ease-in-out;
-}
-
-.student-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-h2 {
-    color: #333;
-    font-size: 24px;
-    margin: 0;
-    margin-bottom: 10px;
-}
-
-h5 {
-    color: #666;
-    font-size: 16px;
-    margin: 0;
-    margin-bottom: 5px;
-}
-
-a {
-    display: inline-block;
-    text-decoration: none;
-    color: #007BFF;
-    font-weight: bold;
-    transition: color 0.2s ease-in-out;
-    margin-top: 10px;
-}
-
-a:hover {
-    color: #0056b3;
-}
-
-/* Responsive styles */
-/* @media (max-width: 768px) {
-    .container {
-        padding: 10px;
-    }
-
-    .student-card {
-        padding: 10px;
-    }
-
-    h2 {
-        font-size: 20px;
-    }
-
-    h5 {
-        font-size: 14px;
-    }
-}  */
-
-/* navbar.css */
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
@@ -112,33 +37,18 @@ pre {
     color: #ffffff;
     margin-top: 10px;
     display: inline-block; /* Display DT elements inline */
-    width: 30%; /* Set a width to control spacing between DT and DD */
+    width: 30%;
 }
 
 dd {
     color: #ffffff;
     margin: 0;
-    margin-left: 10px; /* Add a left margin for spacing */
-    margin-top: 10px; /* Separate DT and DD elements vertically */
-    display: inline-block; /* Display DD elements inline */
+    margin-left: 10px;
+    margin-top: 10px;
+    display: inline-block;
     width: 65%; /* Adjust width for alignment */
 }
 
-/* a {
-    display: inline-block;
-    text-decoration: none;
-    color: #007BFF;
-    font-weight: bold;
-    transition: color 0.2s ease-in-out;
-    margin-top: 10px;
-}
-
-a:hover {
-    color: #0056b3;
-} */
-
-/* allDetails.css */
-/* allDetails.css */
 .btn {
     display: inline-block;
     background-color:#007BFF;
@@ -159,30 +69,6 @@ a:hover {
     background-color: #0056b3;
 }
 
-
-
-/* Responsive styles */
-@media (max-width: 768px) {
-    .container {
-        padding: 10px;
-    }
-
-    .student-card {
-        padding: 10px;
-    }
-
-    pre {
-        margin-top: 5px;
-        width: 100%; /* Full width on smaller screens */
-        display: block; /* Stack DT elements on smaller screens */
-    }
-
-    dd {
-        margin-bottom: 5px;
-        width: 100%; /* Full width on smaller screens */
-        display: block; /* Stack DD elements on smaller screens */
-    }
-}
 
 
 

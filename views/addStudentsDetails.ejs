@@ -1,3 +1,4 @@
+<!-- Include the navigation bar component from "navbar.ejs" -->
 <%- include("navbar.ejs")%>
 
 <!DOCTYPE html>
@@ -6,18 +7,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Student Details</title>
-    <link rel="stylesheet" href="style/addStudentsDetails.css">
-    <link rel="stylesheet" href="style/navbar.css">
+
+    <!-- Include CSS stylesheets for styling -->
+    <link rel="stylesheet" href="/style/addStudentsDetails.css">
+    <link rel="stylesheet" href="/style/navbar.css">
 </head>
 <body>
     <div class="container">
         <h2>Add Student Details</h2>
+
+        <!-- Create a form for adding student details with a POST request to "/addStudent" endpoint -->
         <form action="/addStudent" method="post">
             <div class="row">
+                <!-- Create a row for form elements -->
                 <div class="row-item">
+                    <!-- Create a column for an input field -->
+                    <!-- Display a label for the "Full Name" input -->
                     <label for="fullname">Full Name</label>
+
+                    <!-- Create an input field for the full name with placeholder text and a "required" attribute -->
                     <input type="text" id="fullname" name="fullname" placeholder="your vaild fullname" required>
                 </div>
+
                 <div class="row-item">
                     <label for="address">Address</label>
                     <input type="text" id="address" name="address" placeholder="your vaild address" required>
@@ -29,6 +40,7 @@
                     <label for="grade">Grade</label>
                     <input type="text" id="grade" name="grade" placeholder="your grade" required>
                 </div>
+
                 <div class="row-item">
                     <label for="rollno">Roll number</label>
                     <input type="text" id="rollno" name="rollno" placeholder="your roll number" required>
@@ -40,6 +52,7 @@
                     <label for="age">Age</label>
                     <input type="text"  id="age" name="age" placeholder="your age" required>
                 </div>
+
                 <div class="row-item">
                     <label for="contactno">Contact Number</label>
                     <input type="text" id="contactno" name="contactno" placeholder="Your contact number" required>

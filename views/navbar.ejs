@@ -1,55 +1,57 @@
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar</title>
-</head>
-<body>
-    <nav>
-        <img src="logo.jpg" alt="Logo">
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/addStudentsDetails">Add Student Details</a></li>
-            <li><a href="/allDetails">All Details</a></li>
-        </ul>
-    </nav>
-</body>
-</html> -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn & Earn</title>
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> -->
+    <!-- Include Font Awesome icons library for using icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 
 </head>
 <body>
+    <!-- Create a navigation bar container -->
     <div class="navbar">
         <a href="#" class="navbar-logo">
+
+          <!-- Create a logo link with a logo image and text -->
           <img src="/mainlogo.jpg" alt="Logo">
           <div class="logotxt">
             Learn & Earn
           </div>
         </a>
 
+        <!-- Create an unordered list for navigation links -->
         <ul class="navbar-links">
-          <li><a href="/home" class="nav-link" data-tooltip="Home"><i class="fas fa-home"></i></a></li>
-          <li><a href="/addStudentsDetails" class="nav-link" data-tooltip="Add Details"><i class="fas fa-folder-plus"></i></a></li>
-          <li><a href="/allDetails" class="nav-link" data-tooltip="All Details"><i class="fas fa-handshake"></i></a></li>
-          <li><a href="/logout" id="logout-link" class="nav-link" data-tooltip="Logout"><i class="fas fa-sign-out-alt"></i></a></li>
+          <!-- Create a list item for the "Home" link with a home icon -->
+          <li>
+            <a href="/home" class="nav-link" data-tooltip="Home">
+              <i class="fas fa-home"></i>
+            </a>
+          </li>
+
+          <!-- Create a list item for the "Add Details" link with a folder-plus icon -->
+          <li>
+            <a href="/addStudentsDetails" class="nav-link" data-tooltip="Add Details">
+              <i class="fas fa-folder-plus"></i>
+            </a>
+          </li>
+
+          <!-- Create a list item for the "All Details" link with a handshake icon -->
+          <li>
+            <a href="/allDetails" class="nav-link" data-tooltip="All Details">
+              <i class="fas fa-handshake"></i>
+            </a>
+          </li>
+
+          <!-- Create a list item for the "Logout" link with a sign-out-alt icon -->
+          <li>
+            <a href="/logout" id="logout-link" class="nav-link" data-tooltip="Logout">
+              <i class="fas fa-sign-out-alt"></i>
+            </a>
+          </li>
         </ul>
 
       </div>
-
-      
-          
-
 </body>
 </html>

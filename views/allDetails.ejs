@@ -1,39 +1,49 @@
-<%- include("navbar.ejs")%>
+<!-- Include the navigation bar from "navbar.ejs" -->
+<%- include("navbar.ejs")%> 
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Include CSS stylesheets for styling -->
     <link rel="stylesheet" href="style/navbar.css">
     <link rel="stylesheet" href="style/allDetails.css">
+
     <title>All Students Details</title>
 </head>
 <body>
     <div class="container">
+        <!-- Loop through a list of student details -->
         <% students_details.forEach((allStudentsDetails)=>{ %>
             <div class="student-card">
                 <dl>
-                    <!-- Description Term -->
                     <pre>Fullname                                :</pre>
-                      <!-- Description Details -->
+                    <!-- Output the student's full name -->
                     <dd><%- allStudentsDetails.fullname %></dd>
 
                     <pre>Address                                 :</pre>
+                    <!-- Output the student's address -->
                     <dd><%- allStudentsDetails.address %></dd>
 
                     <pre>Grade                                     :</pre>
+                    <!-- Output the student's grade -->
                     <dd><%- allStudentsDetails.grade %></dd>
 
                     <pre>Roll number                          :</pre>
+                    <!-- Output the student's rollno -->
                     <dd><%- allStudentsDetails.rollno %></dd>
 
                     <pre>Age                                        :</pre>
+                    <!-- Output the student's age -->
                     <dd><%- allStudentsDetails.age %></dd>
 
                     <pre>Contact                                 :</pre>
+                    <!-- Output the student's contactno -->
                     <dd><%- allStudentsDetails.contactno %></dd>
                 </dl>
+                <!-- Create a link to view more details about the student -->
                 <a class="btn" href="/single/<%- allStudentsDetails.id %>">See More</a>
             </div>
         <% }) %>

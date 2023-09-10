@@ -1,9 +1,12 @@
 const express = require ('express'); //require a express
 const app = express(); //calling a express
 
-const bcrypt = require("bcryptjs");
+const bcrypt = require("bcryptjs"); //password hashing lagii use garxa
 
-const { students_details, users } = require("./model/index");    //blogs index.js file bata define vayera ako ho (index.js ko line no. 30)
+
+/*students_details and users is an table name which are on database [studentRecordsCms] 
+(index.js ko line no. 32-33)*/
+const { students_details, users } = require("./model/index");    
 require("./model/index");
 
 //setting up ejs, telling nodejs to use ejs
@@ -22,6 +25,7 @@ app.get('/', async (req, res) => {
     res.render('register');
 });
 
+//home.ejs file lai define gareko
 app.get('/home', async (req, res) => {
   res.render('home');
 });
@@ -42,12 +46,12 @@ app.get('/allDetails', async (req, res) => {
 
 /*addStudentsDetails.ejs Start */
 
-//POST method(http verbs)
-//addStudent vanne home.ejs file ko FORM ko ACTION ma hunxa jahile anii  METHOD jahile POST hunxa
+/*POST method(http verbs)
+addStudent vanne addStudentsDetails.ejs file ko FORM ko ACTION ma hunxa jahile, anii  METHOD jahile POST hunu parxa*/
 app.post('/addStudent', async(req, res) =>{ 
     //database ma data pathauxa
     await students_details.create({
-      fullname : req.body.fullname,  // first title vaneko column title ho, second title vaneko form bata aako value 
+      fullname : req.body.fullname,  // first fullname vaneko column fullname ho, second fullname vaneko form bata aako value 
       address: req.body.address,
       grade : req.body.grade,
       rollno : req.body.rollno,
@@ -58,15 +62,12 @@ app.post('/addStudent', async(req, res) =>{
     res.redirect('/allDetails');
   });
 
-  //Student details PAGE
+//Student details PAGE
 app.get("/single/:id", async (req, res) => {
   // parameter/url bata ko id
   const id = req.params.id;
 
   // yo id related matra data database bata tannu paryo
-
-  // const allBlogs = await blogs.findByPk(id);
-
   const allsDetails = await students_details.findAll({
     where: {
       id,
@@ -75,7 +76,6 @@ app.get("/single/:id", async (req, res) => {
 
   res.render("sDetails", { allsDetails });
 });
-
 
 /*addStudentsDetails.ejs end */
 
@@ -87,18 +87,12 @@ app.get("/single/:id", async (req, res) => {
   app.get("/delete/:id", async (req, res) => {
     // no UI
     const id = req.params.id;
-    // delete garna destroy
+    // For delating any data we can use destory on it
     await students_details.destroy({ where: { id } });
     res.redirect("/allDetails");
   });
 
 /*DELETE students details end*/
-
-
-
-
-
-
 
 
 /*updateStudentsDetails start*/
@@ -112,31 +106,30 @@ app.get("/update/:id", async (req, res) => {
       },
     });
 
-    // allBlogs(single Blog) pass gareko editBlog.ejs file ma prefill ko lagi
+    // allsDetails(single Blog) pass gareko updateStudentsDetails.ejs file ma prefill ko lagi
   res.render("updateStudentsDetails", { id: id,allsDetails:allsDetails });
 });
 
-//Update Students details [POST]
+/*Updating Students details [POST]
+updatestudent is define in updateStudentsDetails.ejs file line no. 15*/
 app.post("/updateStudent/:id", async (req, res) => {
   const id = req.params.id;
 
   // update
-  // form bata(req.body) bata aako kura haru(title,description,subtitle) lai update gardey where id ko value chae tyo parameter bata aako id ko value xa 
+  // form bata(req.body) bata aako kura haru(fullname, address, grade, etc) lai update gardey where id ko value chae tyo parameter bata aako id ko value xa 
   await students_details.update(req.body, {
     where: {
       id: id,
     },
   });
-  // update vayisakeypaxi direct to singleBlog page of that specific id
+  // update vayisakeypaxi direct to sDetails.ejs page of that specific id
   res.redirect("/single/" + id);
 });
 
 /*updateStudentsDetails end*/
 
-
-
-
-//setting register page
+/*register.ejs file start */
+//setting register page 
 app.post('/createUser', async(req, res ) =>{
   console.log(req.body);
 
@@ -146,10 +139,10 @@ app.post('/createUser', async(req, res ) =>{
       email : req.body.email,
       password : bcrypt.hashSync(req.body.password,10),
   })
-
-  // res.send("Successful")
   res.redirect('/login')
 })
+/*register.ejs file end */
+
 
 
 //login.ejs start
@@ -163,14 +156,14 @@ app.post("/createLogin", async (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
 
-  //aako email registered xa ki xainw check garnu paryo
+  //aako email registered xa ki xaina check garnu paryo
   const userFound = await users.findAll({
     where: {
       email: email,
     },
   });
 
-  // if registered xainw vaney(no)
+  // if registered xaina vaney(no)
   if (userFound.length == 0) {
     // error faldinu paryo invalid email or email not registered error
     res.send("Invalid email or password");
@@ -193,15 +186,20 @@ app.post("/createLogin", async (req, res) => {
 
 //login.ejs end
 
-
+//logout.ejs start
+// Perform any logout actions, such as clearing session data or tokens
 app.get('/logout', (req, res) => {
-  // Perform any logout actions, such as clearing session data or tokens
 
-  // Redirect the user to the login page after logging out
+  // Redirect the user to the register page after logging out
   res.redirect('/');
 });
 
+//logout.ejs end
+
+
+
 //Start the server
 app.listen(3000, () =>{
-    console.log('Server is running on port number 4000');
+    console.log('Server is running on port number 3000');
 });
+
