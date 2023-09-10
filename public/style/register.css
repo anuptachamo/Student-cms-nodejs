@@ -12,26 +12,35 @@ body {
   }
 
   .container {
-    background-color: #fff;
+    background-color: #007BFF;
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     width: 400px;
     max-width: 90%;
+    transition: transform 0.2s ease-in-out;
   }
 
   .container h2 {
     font-size: 28px;
     margin-bottom: 20px;
     text-align: center;
-    color: #1877f2;
+    color: #ffffff;
   }
+
+  .container:hover {
+    color: #fff;
+    background-color: rgb(56, 54, 54);
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
 
   .form-group {
     margin-bottom: 20px;
   }
 
   label {
+    color: #fff;
     display: block;
     font-weight: bold;
     margin-bottom: 8px;
@@ -40,7 +49,7 @@ body {
   input[type="text"],
   input[type="email"],
   input[type="password"] {
-    width: 100%;
+    width: 90%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 6px;
@@ -54,29 +63,35 @@ body {
   }
 
   button {
-    background-color: #1c457c;
-    color: rgb(255, 255, 255);
-    padding: 14px 24px;
+    background-color: #ffffff;
+    color: #007BFF;
+    padding: 10px;
+    margin-left: 315px;
     border: none;
     border-radius: 6px;
     cursor: pointer;
     font-weight: bold;
-    width: 100%;  
     transition: background-color 0.3s;
   }
 
   button:hover {
-    background-color: #166fe5;
+    background-color: #007BFF;
+    color: white;
   }
 
   .login-link {
+    color: #fff;
     text-align: center;
     margin-top: 20px;
   }
 
   .login-link a {
-    color: #1877f2;
+    color: #ffffff;
     text-decoration: none;
+  }
+
+  .login-link a:hover{
+    color: #a3a7ad;
   }
 
 /* Registration page End */
