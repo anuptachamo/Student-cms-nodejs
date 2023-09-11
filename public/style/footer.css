@@ -1,7 +1,64 @@
 /* Footer */
 footer {
-    background-color: #007BFF;
+    /* background-color: #007BFF;
     color: #fff;
     text-align: center;
-    padding: 10px 0;
+    padding: 10px; */
+
+    background-color: #1877f2;
+    color: white;
 }
+
+footer:hover{
+    background-color: #151617;
+}
+
+p{
+    text-align: center;
+}
+
+/* Style the social icons container */
+.social-icons {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 10px;
+}
+
+/* Style individual social media icons */
+.social-icons a {
+    margin-right: 10px; /* Add some spacing between icons */
+    color: #cdc5c5; /* Icon color */
+    text-decoration: none; /* Remove underlines from links */
+    font-size: 24px; /* Adjust the icon size as needed */
+}
+
+/* Hover effect for icons */
+.fb:hover {
+    color: #4287e1; /* Change color on hover */
+}
+
+.insta:hover{
+    color: rgb(230, 86, 91);
+}
+
+.twitter:hover{
+    color: rgb(39, 131, 201);
+}
+
+.git:hover{
+    color: #6b6565;
+}
+
+.yt:hover{
+    color: red;
+}
+
+
+.stack:hover{
+    color: orange;
+}
+
+
+
+
+
