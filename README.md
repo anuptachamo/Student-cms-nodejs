@@ -42,7 +42,7 @@ Open vscode
                 - password : bcrypt.hashSync(req.body.password,10),
 ```
 
-## Features
+## All Features
 - Register
 - Login
 - password hashing
