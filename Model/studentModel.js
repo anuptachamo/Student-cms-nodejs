@@ -9,16 +9,25 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       grade: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER, // Define the field as an INTEGER type
         allowNull: false,
+        validate: {
+          isInt: true, // Add a validation rule to check if the value is an integer
+        },
       },
       rollno: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER, // Define the field as an INTEGER type
         allowNull: false,
+        validate: {
+          isInt: true, // Add a validation rule to check if the value is an integer
+        },
       },
       age: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER, // Define the field as an INTEGER type
         allowNull: false,
+        validate: {
+          isInt: true, // Add a validation rule to check if the value is an integer
+        },
       },
       contactno: {
         type: DataTypes.STRING,

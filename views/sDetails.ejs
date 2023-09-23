@@ -17,33 +17,33 @@
         <div class="main-content">
             <pre>Fullname                        :</pre>
             <!-- Display the student's full name -->
-            <dd> <%- allsDetails[0].fullname %> </dd>
+            <dd> <%- allSingleDetails[0].fullname %> </dd>
 
             <pre>Address                         :</pre>
             <!-- Display the student's address -->
-            <dd><%- allsDetails[0].address %> </dd>
+            <dd><%- allSingleDetails[0].address %> </dd>
 
             <pre>Grade                             :</pre>
             <!-- Display the student's grade -->
-            <dd> <%- allsDetails[0].grade %></dd>
+            <dd> <%- allSingleDetails[0].grade %></dd>
 
             <pre>Roll number                   :</pre>
             <!-- Display the student's rollno -->
-            <dd> <%- allsDetails[0].rollno %></dd>
+            <dd> <%- allSingleDetails[0].rollno %></dd>
 
             <pre>Age                                 :</pre>
             <!-- Display the student's age -->
-            <dd> <%- allsDetails[0].age %></dd>
+            <dd> <%- allSingleDetails[0].age %></dd>
 
             <pre>Contact                          :</pre>
             <!-- Display the student's contactno -->
-            <dd> <%- allsDetails[0].contactno %></dd>
+            <dd> <%- allSingleDetails[0].contactno %></dd>
             <div class="button-container">
                 <!-- Create an "Update" button with a link to update the student's details -->
-                <a href="/update/<%- allsDetails[0].id %>" class="update-button">Update</a>
+                <a href="/update/<%- allSingleDetails[0].id %>" class="update-button">Update</a>
 
                 <!-- Create a "Delete" button with a link to delete the student's details -->
-                <a href="/delete/<%-allsDetails[0].id %>" class="delete-button">Delete</a>
+                <a href="/delete/<%-allSingleDetails[0].id %>" class="delete-button">Delete</a>
             </div>
         </div>
       </div>
