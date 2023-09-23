@@ -96,12 +96,19 @@ exports.renderRegisterPage = async (req, res) => {
 //* register(post)
 exports.RegisterPage = async(req, res ) =>{
     console.log(req.body);
+    const password = req.body.password
+    const confirmPassword = req.body.confirmPassword
+    if(password !== confirmPassword){
+      return res.send("password and confirm password doesn't match")
+    }
   
     //database ma halnu paryo
     await users.create({
         username : req.body.username,
         email : req.body.email,
         password : bcrypt.hashSync(req.body.password,10),
+      
+
     })
     res.redirect('/login')
   }
