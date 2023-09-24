@@ -86,9 +86,10 @@ body {
   .signup-link a {
     color: #ffffff;
     text-decoration: none;
+    font-weight: bold;
   }
 
   .signup-link a:hover{
-    color: #a3a7ad;
+    color: #368eeb;
   }
   /* Login page end */

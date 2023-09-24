@@ -1,5 +1,6 @@
-const { students_details, users } = require("../../model/index");
-const bcrypt = require("bcryptjs"); //password hashing lagii use garxa
+/*students_details is an table name which are on database [studentRecordsCms] 
+(index.js ko line no. 33)*/
+const { students_details} = require("../../model/index");
 
 
 //* home(get)
@@ -28,43 +29,33 @@ exports.AddStudentsDetails = async(req, res) =>{
   }
 
 //*single(get)
-  exports.renderSingleStudentDetails = async (req, res) => {
-    // parameter/url bata ko id
-    const id = req.params.id;
-  
-    // yo id related matra data database bata tannu paryo
-    const allSingleDetails = await students_details.findAll({
+exports.renderSingleStudentDetails = async (req, res) => {
+  // parameter/url bata ko id
+  const id = req.params.id;
+
+  // yo id related matra data database bata tannu paryo
+  const allSingleDetails = await students_details.findAll({
+    where: {
+      id,
+    },
+  });
+
+  res.render("sDetails", { allSingleDetails });
+}
+
+//* update(get)
+exports.renderUpdateStudentsDetails = async (req, res) => {
+  const id = req.params.id;
+    // finding single student to prefill in input
+    const allsingleDetails = await students_details.findAll({
       where: {
         id,
       },
     });
-  
-    res.render("sDetails", { allSingleDetails });
-  }
 
-//*delete(get)
-  exports.renderDeleteStudentsDetails = async (req, res) => {
-    // no UI
-    const id = req.params.id;
-    // For deleting any data we can use destroy on it
-    await students_details.destroy({ where: { id } });
-    res.redirect("/allDetails");
-  }
-
-
-  //* update(get)
-  exports.renderUpdateStudentsDetails = async (req, res) => {
-    const id = req.params.id;
-      // finding single student to prefill in input
-      const allsingleDetails = await students_details.findAll({
-        where: {
-          id,
-        },
-      });
-  
-      // allSingleDetails(single Blog) pass gareko updateStudentsDetails.ejs file ma prefill ko lagi
-    res.render("updateStudentsDetails", { id: id,allSingleDetails:allsingleDetails });
-  }
+  // allSingleDetails(single Blog) pass gareko updateStudentsDetails.ejs file ma prefill ko lagi
+  res.render("updateStudentsDetails", { id: id,allSingleDetails:allsingleDetails });
+}
 
 //* update(post)
 exports.UpdateStudentsDetails = async (req, res) => {
@@ -88,74 +79,11 @@ exports.renderAllDetails =   async (req, res) => {
     res.render("allDetails", { students_details: allSingleDetails });
   } 
 
-//* register(get)
-exports.renderRegisterPage = async (req, res) => {
-    res.render('register');
+//*delete(get)
+exports.renderDeleteStudentsDetails = async (req, res) => {
+  // no UI
+  const id = req.params.id;
+  // For deleting any data we can use destroy on it
+  await students_details.destroy({ where: { id } });
+  res.redirect("/allDetails");
 }
-
-//* register(post)
-exports.RegisterPage = async(req, res ) =>{
-    console.log(req.body);
-    const password = req.body.password
-    const confirmPassword = req.body.confirmPassword
-    if(password !== confirmPassword){
-      return res.send("password and confirm password doesn't match")
-    }
-  
-    //database ma halnu paryo
-    await users.create({
-        username : req.body.username,
-        email : req.body.email,
-        password : bcrypt.hashSync(req.body.password,10),
-      
-
-    })
-    res.redirect('/login')
-  }
-
-//* login(get)
-exports.renderLoginPage = (req, res) =>{
-    res.render('login');
-  }
-
-//* login(post)
-exports.LoginPage =  async (req, res) => {
-    // email , password
-    const email = req.body.email;
-    const password = req.body.password;
-  
-    //aako email registered xa ki xaina check garnu paryo
-    const userFound = await users.findAll({
-      where: {
-        email: email,
-      },
-    });
-  
-    // if registered xaina vaney(no)
-    if (userFound.length == 0) {
-      // error faldinu paryo invalid email or email not registered error
-      res.send("Invalid email or password");
-    } else {
-      const databasePassword = userFound[0].password; // database pahila register garda ko password
-      //if registered xa vaney (yes)
-  
-      // if yes(xa) vaney ,password check garnu paryo
-      const isPasswordCorrect = bcrypt.compareSync(password, databasePassword);
-  
-      if (isPasswordCorrect) {
-        // match vayo(yes),login successfully
-        res.render("home");
-      } else {
-        // match vayena (no) , error->invalid password
-        res.send("Invalid email or password");
-      }
-    }
-  } 
-
-
-//* logout(get)
-  exports.renderLogoutPage = (req, res) => {
-
-    // Redirect the user to the register page after logging out
-    res.redirect('/');
-  }
