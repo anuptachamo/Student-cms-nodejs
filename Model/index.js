@@ -34,6 +34,10 @@ db.students_details = require("./studentModel.js")(sequelize, DataTypes);
 db.users = require("./userModel.js")(sequelize, DataTypes);
 
 
+//relationship
+db.users.hasMany(db.students_details)
+db.students_details.belongsTo(db.users)
+
 db.sequelize.sync({ force: false }).then(() => {
   console.log("yes re-sync done");
 });

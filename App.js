@@ -1,17 +1,11 @@
 const express = require ('express'); //require a express
 const app = express(); //calling a express
 
-
-
-
-  
 require("./model/index");
-
 
 //* Routes
 const allStudentsRoute = require("./routes/studentsRoute")
 const allAuthRoute = require("./routes/authRoute")
-
 
 //setting up ejs, telling nodejs to use ejs
 app.set("view engine", "ejs");
@@ -27,19 +21,6 @@ app.use(express.urlencoded({extended: true}));
 app.use("", allStudentsRoute)
 // app.use("/test", allStudentsRoute)
 app.use("", allAuthRoute)
-
-
-// app.get('/', renderRegisterPage );
-
-// //home.ejs file lai define gareko
-// app.get('/home', renderHomePage );
-
-// //addStudentsDetails.ejs file lai define gareko
-// app.get('/addStudentsDetails', renderAddStudentsDetails);
-
-
-// app.post('/addStudent', AddStudentsDetails );
-
 
 
 
